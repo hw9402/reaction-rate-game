@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: #F6F1F1;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   @font-face {
     font-family: 'GmarketSansMedium';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
