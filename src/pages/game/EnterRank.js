@@ -13,6 +13,7 @@ const EnterRank = () => {
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
+  const [state, setState] = useState(false);
 
   const handleChange = e => {
     const { value } = e.target;
@@ -20,6 +21,7 @@ const EnterRank = () => {
   }
 
   const saveFirebase = async () => {
+    setState(true);
     await addDoc(rankCollectionRef, {
       name: name,
       score: Math.floor(recent.reduce((sum, index) => sum + index) / recent.length),
@@ -34,7 +36,7 @@ const EnterRank = () => {
       <Container>
         <Title>순위 등록하기!</Title>
         <Input placeholder='닉네임을 작성해주세요!' onChange={handleChange}/>
-        <Button onClick={() => saveFirebase()}>등록</Button>
+        <Button onClick={() => saveFirebase()} disabled={state}>등록</Button>
         <Hint>점수는 3번의 게임 결과의 평균값으로 산정됩니다.</Hint>
       </Container>
     </>
