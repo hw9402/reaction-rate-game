@@ -65,6 +65,7 @@ const Table = styled.table`
   align-items: center;
   flex-direction: column;
   table-layout: fixed;
+  margin-bottom: 30px;
 `;
 
 const TableHeader = styled.thead`
