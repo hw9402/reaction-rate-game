@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from "./styles/global.style";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Game from "./pages/game/Game";
+import Rank from "./pages/rank/Rank";
+import EnterRank from "./pages/game/EnterRank";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact={true} element={<Home />} />
+          <Route path="/game" element={<Game />} />
+          <Route path="/rank" element={<Rank />} />
+          <Route path="/form" element={<EnterRank />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
